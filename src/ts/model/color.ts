@@ -1,4 +1,3 @@
-import {TsDom} from "./tsdom";
 var tinycolor = require("tinycolor2");
 
 export class Color {
@@ -71,14 +70,6 @@ export class Color {
                 a: opacity
             }
         };
-
-          /*console.log(this.rgb);
-          console.log(this.rgba);
-          console.log(this.hex);
-          console.log(this.hsl);
-          console.log(this.hsla);
-          console.log(this.hsv);
-          console.log(this.source);*/
     }
 
     format(format: string): any {

@@ -245,6 +245,7 @@ class DefaultPicker extends ColorPicker {
 
                 if (isValid) {
                     this.spectrumColor = Color.process(value);
+                    this.currentColor = this.spectrumColor;
                     this.setHueCursorPosition();
                     this.fillSpectrumCanvas();
                     this.fillOpacityCanvas();
@@ -432,6 +433,7 @@ class DefaultPicker extends ColorPicker {
 
         if (value >= 0 && value <= 255) {
             this.spectrumColor = Color.process(this.getColorFromInputs());
+            this.currentColor = this.spectrumColor;
             this.setHueCursorPosition();
             this.fillSpectrumCanvas();
             this.fillOpacityCanvas();
@@ -439,6 +441,7 @@ class DefaultPicker extends ColorPicker {
             this.hexInput.val(this.spectrumColor.hex);
             this.setOpacityGradientAndCursorColor();
             this.dispatchColorChangedEvent();
+
         }
     }
 
@@ -506,6 +509,7 @@ class DefaultPicker extends ColorPicker {
         this.currentColor = Color.process(this.options.color);
         this.aInput.val(this.spectrumColor.source.rgba.a);
         this.setColorValuesToInputs();
+
 
         // important, with and height from css properties don't match
         // you need to set width and height manually to attributes
